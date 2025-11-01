@@ -1,24 +1,34 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Layout from './components/Layout'
-import Home from './pages/Home'
-import Services from './pages/Services'
-import Specialities from './pages/Specialities'
-import Contact from './pages/Contact'
-import Dashboard from './pages/Dashboard'
 import './App.css'
+
+const Home = React.lazy(() => import('./pages/Home'))
+const Services = React.lazy(() => import('./pages/Services'))
+const Specialities = React.lazy(() => import('./pages/Specialities'))
+const Contact = React.lazy(() => import('./pages/Contact'))
 
 function App() {
   return (
     <Router>
       <Layout>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/specialities" element={<Specialities />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-        </Routes>
+        <Suspense fallback={
+          <div style={{ 
+            display: 'flex', 
+            justifyContent: 'center', 
+            alignItems: 'center', 
+            height: '100vh' 
+          }}>
+            Loading...
+          </div>
+        }>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/specialities" element={<Specialities />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </Suspense>
       </Layout>
     </Router>
   )

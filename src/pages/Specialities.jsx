@@ -71,7 +71,14 @@ function Specialities() {
 
   return (
     <div className="page">
-      <div className="page-header">
+      <div className="page-header" style={{
+        backgroundImage: 'linear-gradient(135deg, rgba(30, 58, 138, 0.05) 0%, rgba(249, 115, 22, 0.05) 100%), url(https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=1200&h=400&fit=crop&q=80)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        padding: '4rem 2rem',
+        borderRadius: '16px',
+        marginBottom: '3rem'
+      }}>
         <h1>Our Approach</h1>
         <p className="page-subtitle">
           Precision-driven revenue cycle management tailored to your practice
@@ -141,14 +148,29 @@ function Specialities() {
         </div>
 
         <div className="specialties-cards-grid">
-          {specialties.map((specialty, index) => (
-            <div key={index} className="specialty-modern-card">
-              <div className="specialty-icon-large">{specialty.icon}</div>
-              <h3 className="specialty-title-card">{specialty.title}</h3>
-              <p className="specialty-description-card">{specialty.description}</p>
-              <p className="specialty-details-card">{specialty.details}</p>
-            </div>
-          ))}
+          {specialties.map((specialty, index) => {
+            const specialtyImages = [
+              'https://images.unsplash.com/photo-1581591524425-c7e0978865fc?w=400&h=250&fit=crop&q=80',
+              'https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=400&h=250&fit=crop&q=80',
+              'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&h=250&fit=crop&q=80',
+              'https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&h=250&fit=crop&q=80',
+              'https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=250&fit=crop&q=80',
+              'https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=400&h=250&fit=crop&q=80'
+            ]
+            return (
+              <div key={index} className="specialty-modern-card">
+                <img 
+                  src={specialtyImages[index]} 
+                  alt={specialty.title}
+                  className="specialty-card-image"
+                />
+                <div className="specialty-icon-large">{specialty.icon}</div>
+                <h3 className="specialty-title-card">{specialty.title}</h3>
+                <p className="specialty-description-card">{specialty.description}</p>
+                <p className="specialty-details-card">{specialty.details}</p>
+              </div>
+            )
+          })}
         </div>
 
         <div className="specialties-footer">

@@ -8,7 +8,6 @@ A modern React-based web application for revenue cycle management, inspired by R
 - **Services Page**: Displays comprehensive revenue cycle management services
 - **Specialities Page**: Highlights different healthcare specialities supported
 - **Contact Us Page**: Contact form and company information
-- **Dashboard**: Revenue metrics, analytics, and quick actions
 
 ## Color Theme
 
@@ -59,7 +58,6 @@ Revionix/
 │   │   ├── Services.jsx     # Services page
 │   │   ├── Specialities.jsx # Specialities page
 │   │   ├── Contact.jsx     # Contact page
-│   │   ├── Dashboard.jsx   # Dashboard page
 │   │   └── Pages.css       # Shared page styles
 │   ├── App.jsx              # Main app component with routing
 │   ├── App.css
@@ -106,12 +104,6 @@ Revionix/
 - Contact form
 - Business hours
 - Address details
-
-### Dashboard
-- Key revenue metrics
-- Recent activity feed
-- Revenue overview
-- Quick action buttons
 
 ## Customization
 

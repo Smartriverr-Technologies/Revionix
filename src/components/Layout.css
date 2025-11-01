@@ -8,6 +8,12 @@
   background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-dark) 100%);
   padding: 1rem 2rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  width: 100%;
 }
 
 .nav-container {
@@ -89,6 +95,7 @@
   width: 100%;
   margin: 0 auto;
   padding: 2rem;
+  margin-top: 80px;
 }
 
 .footer {
@@ -105,14 +112,52 @@
     gap: 1rem;
   }
   
+  .nav-toggle {
+    display: block;
+    background: transparent;
+    color: var(--white);
+    border: 2px solid transparent;
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    font-size: 1.25rem;
+    cursor: pointer;
+  }
+
   .nav-links {
-    flex-wrap: wrap;
+    display: none;
+    flex-direction: column;
     gap: 0.5rem;
     justify-content: center;
+    width: 100%;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links li {
+    text-align: center;
+    width: 100%;
   }
   
   .header {
     padding: 1rem;
   }
+}
+
+/* Skip link visible on focus */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  background: #111827;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  z-index: 1100;
+}
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
 }
 

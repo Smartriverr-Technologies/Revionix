@@ -51,8 +51,28 @@
 
 .hero-image {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 1.5rem;
+  position: relative;
+}
+
+.hero-main-image {
+  width: 100%;
+  max-width: 560px;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+}
+
+.hero-main-image {
+  width: 100%;
+  max-width: 500px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
 }
 
 .hero-stats {
@@ -68,6 +88,31 @@
   color: var(--white);
   text-align: center;
   min-width: 200px;
+}
+
+.stat-icon {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.95);
+}
+
+@media (max-width: 480px) {
+  .stat-card {
+    padding: 1rem;
+    min-width: unset;
+  }
+  .stat-value {
+    font-size: 1.5rem;
+  }
+  .hero-title {
+    font-size: 1.5rem;
+  }
+  .hero-description {
+    font-size: 1rem;
+  }
 }
 
 .stat-value {
@@ -94,8 +139,29 @@
 
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
+  /* Limit to up to 4 columns on wide screens to keep layout balanced */
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+/* Responsive breakpoints: 3 cols, 2 cols, 1 col */
+@media (max-width: 1200px) {
+  .features-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .features-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .feature-card {
@@ -116,6 +182,15 @@
 .feature-icon {
   font-size: 3rem;
   margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-orange);
+}
+
+.feature-icon svg {
+  width: 3rem;
+  height: 3rem;
 }
 
 .feature-card h3 {
@@ -211,12 +286,34 @@
   background: var(--white);
   border: 2px solid var(--gray-light);
   border-radius: 16px;
-  padding: 2rem;
+  padding: 0;
   transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
   position: relative;
   overflow: hidden;
+}
+
+.service-card-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.service-card-modern > .card-header-modern,
+.service-card-modern > .service-title-card,
+.service-card-modern > .service-description-card,
+.service-card-modern > .service-highlights-modern {
+  padding: 0 2rem;
+}
+
+.service-card-modern > .card-header-modern {
+  padding-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.service-card-modern > .service-highlights-modern {
+  padding-bottom: 2rem;
 }
 
 .service-card-modern::before {
@@ -335,9 +432,33 @@
   background: var(--white);
   border: 2px solid var(--gray-light);
   border-radius: 16px;
-  padding: 2rem;
+  padding: 0;
   text-align: center;
   transition: all 0.3s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.about-card-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.about-card > .about-icon,
+.about-card > h3,
+.about-card > p {
+  padding: 0 2rem;
+}
+
+.about-card > .about-icon {
+  padding-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.about-card > p {
+  padding-bottom: 2rem;
 }
 
 .about-card:hover {
@@ -349,6 +470,15 @@
 .about-icon {
   font-size: 3rem;
   margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-orange);
+}
+
+.about-icon svg {
+  width: 3rem;
+  height: 3rem;
 }
 
 .about-card h3 {
@@ -639,10 +769,34 @@
   background: var(--white);
   border: 2px solid var(--gray-light);
   border-radius: 16px;
-  padding: 2rem;
+  padding: 0;
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.specialty-card-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.specialty-modern-card > .specialty-icon-large,
+.specialty-modern-card > .specialty-title-card,
+.specialty-modern-card > .specialty-description-card,
+.specialty-modern-card > .specialty-details-card {
+  padding: 0 2rem;
+}
+
+.specialty-modern-card > .specialty-icon-large {
+  padding-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.specialty-modern-card > .specialty-details-card {
+  padding-bottom: 2rem;
 }
 
 .specialty-modern-card::before {
@@ -722,6 +876,15 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
+}
+
+.contact-info-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
 
 .contact-info h2 {

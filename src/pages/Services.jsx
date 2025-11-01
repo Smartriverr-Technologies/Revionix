@@ -96,7 +96,14 @@ function Services() {
 
   return (
     <div className="page">
-      <div className="page-header">
+      <div className="page-header" style={{
+        backgroundImage: 'linear-gradient(135deg, rgba(30, 58, 138, 0.05) 0%, rgba(249, 115, 22, 0.05) 100%), url(https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=400&fit=crop&q=80)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        padding: '4rem 2rem',
+        borderRadius: '16px',
+        marginBottom: '3rem'
+      }}>
         <h1>Our Core RCM Services</h1>
         <p className="page-subtitle">
           Comprehensive Revenue Cycle Management services designed to enhance financial performance 
@@ -105,29 +112,51 @@ function Services() {
       </div>
 
       <div className="services-cards-grid">
-        {services.map((service, index) => (
-          <div key={index} className="service-card-modern">
-            <div className="card-header-modern">
-              <div className="service-icon-large">{service.icon}</div>
-              <div className="service-number-badge">{service.number}</div>
+        {services.map((service, index) => {
+          const serviceImages = [
+            'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=250&fit=crop&q=80',
+            'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop&q=80',
+            'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=400&h=250&fit=crop&q=80',
+            'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop&q=80',
+            'https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&h=250&fit=crop&q=80',
+            'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=400&h=250&fit=crop&q=80',
+            'https://images.unsplash.com/photo-1556740758-90de374c12ad?w=400&h=250&fit=crop&q=80',
+            'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop&q=80'
+          ]
+          return (
+            <div key={index} className="service-card-modern">
+              <img 
+                src={serviceImages[index]} 
+                alt={service.title}
+                className="service-card-image"
+              />
+              <div className="card-header-modern">
+                <div className="service-icon-large">{service.icon}</div>
+                <div className="service-number-badge">{service.number}</div>
+              </div>
+              <h3 className="service-title-card">{service.title}</h3>
+              <p className="service-description-card">{service.description}</p>
+              <div className="service-highlights-modern">
+                {service.highlights.map((highlight, idx) => (
+                  <div key={idx} className="highlight-item">
+                    <span className="highlight-check">✓</span>
+                    <span className="highlight-text">{highlight}</span>
+                  </div>
+                ))}
+              </div>
             </div>
-            <h3 className="service-title-card">{service.title}</h3>
-            <p className="service-description-card">{service.description}</p>
-            <div className="service-highlights-modern">
-              {service.highlights.map((highlight, idx) => (
-                <div key={idx} className="highlight-item">
-                  <span className="highlight-check">✓</span>
-                  <span className="highlight-text">{highlight}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        ))}
+          )
+        })}
       </div>
 
-      <section className="services-cta">
-        <h2>Ready to Transform Your Revenue Cycle?</h2>
-        <p>Contact our team to learn how our comprehensive RCM services can benefit your healthcare organization.</p>
+      <section className="services-cta" style={{
+        backgroundImage: 'linear-gradient(135deg, rgba(30, 58, 138, 0.85) 0%, rgba(30, 58, 138, 0.75) 100%), url(https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&h=400&fit=crop&q=80)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        color: 'white'
+      }}>
+        <h2 style={{ color: 'white' }}>Ready to Transform Your Revenue Cycle?</h2>
+        <p style={{ color: 'rgba(255, 255, 255, 0.9)' }}>Contact our team to learn how our comprehensive RCM services can benefit your healthcare organization.</p>
         <div className="cta-buttons">
           <Link to="/contact" className="btn btn-primary">Schedule a Consultation</Link>
           <Link to="/contact" className="btn btn-secondary">Contact Us Today</Link>
