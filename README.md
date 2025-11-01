@@ -124,4 +124,3 @@ You can easily customize:
 ## License
 
 This project is created for demonstration purposes.
-
