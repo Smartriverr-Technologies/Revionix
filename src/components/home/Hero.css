@@ -1,0 +1,126 @@
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+.moto {
+  margin-bottom: 1rem;
+}
+
+.moto-text {
+  font-size: 1.25rem;
+  color: var(--primary-orange);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--primary-blue);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-orange) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-description {
+  font-size: 1.25rem;
+  color: var(--gray);
+  line-height: 1.6;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.hero-image {
+  position: relative;
+}
+
+.hero-main-image {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.stat-card {
+  background: var(--white);
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: 2px solid var(--gray-light);
+}
+
+.stat-icon {
+  font-size: 2rem;
+  color: var(--primary-orange);
+  margin-bottom: 0.5rem;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary-blue);
+  margin-bottom: 0.25rem;
+}
+
+.stat-label {
+  color: var(--gray);
+  font-size: 0.875rem;
+}
+
+@media (max-width: 1024px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-content {
+    text-align: center;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+}
