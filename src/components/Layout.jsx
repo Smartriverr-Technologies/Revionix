@@ -41,8 +41,8 @@ function Layout({ children }) {
           <div className="right-section">
             <ul className={`nav-links ${menuOpen ? 'open' : ''}`} role="navigation" aria-label="Main navigation">
               <li><Link to="/" className={location.pathname === '/' ? 'active' : ''}>Home</Link></li>
-              {/* <li><Link to="/services" className={location.pathname === '/services' ? 'active' : ''}>Services</Link></li>
-              <li><Link to="/specialities" className={location.pathname === '/specialities' ? 'active' : ''}>Specialities</Link></li> */}
+                <li><Link to="/services" className={location.pathname === '/services' ? 'active' : ''}>Services</Link></li>
+                <li><Link to="/specialities" className={location.pathname === '/specialities' ? 'active' : ''}>Specialities</Link></li>
               <li><Link to="/contact" className={location.pathname === '/contact' ? 'active' : ''}>Contact</Link></li>
             </ul>
             <button

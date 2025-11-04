@@ -1,42 +1,50 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './Pages.css'
+import { 
+  FaXRay, 
+  FaHospital, 
+  FaBone, 
+  FaSyringe,
+  FaHospitalAlt,
+  FaUserMd
+} from 'react-icons/fa'
 
 function Specialities() {
   const specialties = [
     {
       title: 'Radiology Centers',
-      icon: '🩻',
+      icon: <FaXRay />,
       description: 'Radiology billing requires precision in capturing procedures, interpreting reports, and applying correct modifiers.',
       details: 'We ensure accurate charge entry, correct CPT usage, and timely claim submissions to reduce denials and improve turnaround time. Our specialized team handles high claim volumes efficiently, helping radiology centers maintain a consistent cash flow.'
     },
     {
       title: 'Surgery Centers',
-      icon: '⚕️',
+      icon: <FaHospital />,
       description: 'Ambulatory Surgery Centers (ASCs) deal with complex billing involving multiple procedures, payers, and documentation layers.',
       details: 'Our experts manage pre-authorizations, operative note reviews, coding, and claims submission, ensuring compliance with payer-specific rules and maximizing reimbursement accuracy for surgical cases.'
     },
     {
       title: 'Orthopedic Clinics',
-      icon: '🦴',
+      icon: <FaBone />,
       description: 'Orthopedic practices often face challenges with diverse procedure types — from joint injections and therapy to surgical billing.',
       details: 'We specialize in handling implant billing, modifiers, and multi-payer submissions, ensuring quick authorizations, proper documentation, and faster payment cycles.'
     },
     {
       title: 'Anesthesiology Services',
-      icon: '💉',
+      icon: <FaSyringe />,
       description: 'Anesthesia billing is time-based and requires meticulous attention to documentation and concurrency rules.',
       details: 'Our team ensures precise coding of anesthesia start and stop times, correct modifier usage, and compliance with payer regulations, minimizing errors and maximizing revenue for each case.'
     },
     {
       title: 'Hospital Services',
-      icon: '🏥',
+      icon: <FaHospitalAlt />,
       description: 'Hospitals require detailed oversight of both inpatient and outpatient billing.',
       details: 'We provide comprehensive support — including charge capture, claim submission, denial management, and payment posting — ensuring full compliance with Medicare, Medicaid, and commercial payers while maintaining real-time reporting and visibility across departments.'
     },
     {
       title: 'Physician Groups',
-      icon: '👥',
+      icon: <FaUserMd />,
       description: 'Managing billing for multi-provider or multi-specialty groups demands coordination and consistency.',
       details: 'We streamline the entire billing cycle — from eligibility checks and charge entry to AR follow-up and reporting — providing centralized control, improved cash flow, and clear performance analytics for all providers under your network.'
     }

@@ -3,14 +3,16 @@ import './Pages.css'
 import Hero from '../components/home/Hero'
 import Features from '../components/home/Features'
 import AboutGrid from '../components/home/AboutGrid'
+import Values from '../components/home/Values'
 import CTA from '../components/shared/CTA'
 
 function Home() {
   return (
     <div className="page">
       <Hero />
-      <AboutGrid />
-      <Features />
+  <AboutGrid />
+  <Features />
+  <Values />
       <CTA 
         title="Ready to Transform Your Revenue Cycle?"
         description="Join hundreds of healthcare organizations already benefiting from our solutions."

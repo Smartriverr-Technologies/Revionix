@@ -5,6 +5,7 @@ import './App.css'
 
 const Home = React.lazy(() => import('./pages/Home'))
 const Services = React.lazy(() => import('./pages/Services'))
+const ServicesNew = React.lazy(() => import('./pages/ServicesNew'))
 const Specialities = React.lazy(() => import('./pages/Specialities'))
 const Contact = React.lazy(() => import('./pages/Contact'))
 
@@ -24,7 +25,8 @@ function App() {
         }>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/services" element={<Services />} />
+            <Route path="/services" element={<ServicesNew />} />
+            <Route path="/services-new" element={<Services />} />
             <Route path="/specialities" element={<Specialities />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
